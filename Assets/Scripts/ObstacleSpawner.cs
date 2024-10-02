@@ -20,11 +20,13 @@ public class ObstacleSpawner : MonoBehaviour
         while (true)
         {
             Vector2 spawnPos = transform.position;
-            spawnPos.y = Random.Range(-2, 4);
+            // y축 좌표가 -2 ~ 3인 장애물을 랜덤하게 생성
+            spawnPos.y = Random.Range(-2f, 4f);
             
             GameObject newObstacle = Instantiate(_obstaclePrefab, spawnPos, transform.rotation);
             Destroy(newObstacle, 10.0f);
 
+            // 장애물이 _minSpawnTime ~ _maxSpawnTime초 사이에서 랜덤하게 스폰
             _spawnTime = Random.Range(_minSpawnTime, _maxSpawnTime + 1);
             yield return new WaitForSeconds(_spawnTime);
         }
