@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -17,9 +18,12 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
+        transform.Rotate(new Vector3(0f, 0f, -90f) * Time.deltaTime);
+
         if (Input.GetMouseButtonDown(0))
         {
             Jump();
+            transform.rotation = Quaternion.Euler(0f, 0f, 45f);
         }
     }
 

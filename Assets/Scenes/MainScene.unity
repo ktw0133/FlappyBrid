@@ -584,7 +584,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _obstaclePrefab: {fileID: 2586280534017861870, guid: 4c744d9b402dff7409b967bcfca24646, type: 3}
-  _spawnTime: 3
+  _minSpawnTime: 2
+  _maxSpawnTime: 5
 --- !u!1 &935072060
 GameObject:
   m_ObjectHideFlags: 0
