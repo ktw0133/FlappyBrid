@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
+// 클릭 시 점프
 public class PlayerMove : MonoBehaviour
 {
+    // 중력 가속도
     [SerializeField] [Range(0, 10)] private float _gravity;
+
+    // 점프력
     [SerializeField] private float _jumpForce;
 
     private Rigidbody2D _rigidbody;
@@ -18,14 +21,17 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
-        // 아무것도 하지 않을 시 새의 로테이션을 -방향으로 계속 감소
-        transform.Rotate(new Vector3(0f, 0f, -90f) * Time.deltaTime);
-
+        // 마우스 왼쪽버튼 클릭 시
         if (Input.GetMouseButtonDown(0))
         {
-            Jump();
             // 새의 로테이션을 45도로 고정
             transform.rotation = Quaternion.Euler(0f, 0f, 45f);
+            Jump();
+        }
+        else
+        {
+            // 새의 로테이션을 -방향으로 감소
+            transform.Rotate(new Vector3(0f, 0f, -90f) * Time.deltaTime);
         }
     }
 

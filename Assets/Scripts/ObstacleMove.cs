@@ -6,7 +6,7 @@ public class ObstacleMove : MonoBehaviour
 {
     [SerializeField] private float _speed;
 
-    void Update()
+    private void Update()
     {
         Vector2 newPosition = transform.position;
         newPosition.x -= _speed * Time.deltaTime;

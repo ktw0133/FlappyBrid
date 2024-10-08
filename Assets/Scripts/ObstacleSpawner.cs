@@ -20,6 +20,7 @@ public class ObstacleSpawner : MonoBehaviour
         while (true)
         {
             Vector2 spawnPos = transform.position;
+
             // y축 좌표가 -2 ~ 3인 장애물을 랜덤하게 생성
             spawnPos.y = Random.Range(-2f, 4f);
             
